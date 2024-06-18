@@ -12,32 +12,19 @@
       content="A Full Stack Web Developer building the Websites and Web Applications that leads to the success of the overall application"
     />
     <meta name="author" content="Akancha Kumari" />
-
-    <meta
-      property="og:title"
-      content=" Akancha Kumari| Full Stack Web Developer"
-    />
+    <meta property="og:title" content=" Akancha Kumari| Full Stack Web Developer"/>
     <meta property="og:site_name" content="Akancha Kumari Portfolio Website" />
     <meta property="og:url" content="https://www.akanchakumari.com/" />
-    <meta
-      property="og:description"
-      content="A Full Stack Web Developer building the Websites and Web Applications that leads to the success of the overall application"
-    />
+    <meta property="og:description"  content="A Full Stack Web Developer building the Websites and Web Applications that leads to the success of the overall application"/>
 
     <link rel="stylesheet" href="css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap" rel="stylesheet" />
 
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-QD9ESD1D9K"
-    ></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QD9ESD1D9K"></script>
 
-
+    
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -56,15 +43,10 @@
       <div class="header__content">
         <div class="header__logo-container">
           <div class="header__logo-img-cont">
-            <img
-              src="Images/Akancha_image.PNG"
-              alt="Akancha Kumari Logo Image"
-              class="header__logo-img"
-            />
+            <img src="Images/Akancha_image.PNG" alt="Akancha Kumari Logo Image" class="header__logo-img" />
           </div>
           <span class="header__logo-sub">Akancha Kumari</span>
         </div>
-
         <div class="header__main">
           <ul class="header__links">
             <li class="header__link-wrapper">
@@ -81,16 +63,8 @@
             </li>
           </ul>
           <div class="header__main-ham-menu-cont">
-            <img
-              src="./assets/svg/ham-menu.svg"
-              alt="hamburger menu"
-              class="header__main-ham-menu"
-            />
-            <img
-              src="./assets/svg/ham-menu-close.svg"
-              alt="hamburger menu close"
-              class="header__main-ham-menu-close d-none"
-            />
+            <img src="./assets/svg/ham-menu.svg" alt="hamburger menu" class="header__main-ham-menu" />
+            <img src="./assets/svg/ham-menu-close.svg" alt="hamburger menu close" class="header__main-ham-menu-close d-none" />
           </div>
         </div>
       </div>
@@ -100,7 +74,6 @@
             <li class="header__sm-menu-link">
               <a href="./"> Home </a>
             </li>
-
             <li class="header__sm-menu-link">
               <a href="./#about"> About </a>
             </li>
@@ -167,8 +140,9 @@
               <div class="skills__skill">C#</div>
               <div class="skills__skill">ASP.NET</div>
               <div class="skills__skill">ASP.NET MVC</div>
-              <div class="skills__skill">HTML</div>
-              <div class="skills__skill">CSS</div>
+              <div class="skills__skill">ASP.NET collaborate</div>
+              <div class="skills__skill">HTML5</div>
+              <div class="skills__skill">CSS3</div>
               <div class="skills__skill">JavaScript</div>
               <div class="skills__skill">jQuery</div>
               <div class="skills__skill">AJAX</div>
@@ -200,7 +174,7 @@
                 movement report, track serial & lot numbers, show digital documents, 
                 display product ageing and also signed proof of deliveries including receipts.
               </p>
-              <a class='btn btn--med btn--theme dynamicBgClr' href='/project-1' target='_blank'>More Information...</a
+              <a class='btn btn--med btn--theme dynamicBgClr' href='/project-1.html' target='_blank'>More Information...</a
               >
             </div>
           </div>
@@ -261,12 +235,6 @@
         </div>
       </div>
     </section>
-
-
-
-
-
-    
     <footer class="main-footer">
       <div class="main-container">
         <div class="main-footer__upper">
@@ -356,10 +324,45 @@
       </div>
     </footer>
 
-    <script src="./index.js"></script>
-    <script
-      src="//code.tidio.co/hkirvl5pqs5cjjawh11xutnzjgtg9tfi.js"
-      async
-    ></script>
+    <script>
+      const hamMenuBtn = document.querySelector('.header__main-ham-menu-cont')
+      const smallMenu = document.querySelector('.header__sm-menu')
+      const headerHamMenuBtn = document.querySelector('.header__main-ham-menu')
+      const headerHamMenuCloseBtn = document.querySelector(
+        '.header__main-ham-menu-close'
+      )
+      const headerSmallMenuLinks = document.querySelectorAll('.header__sm-menu-link')
+
+      hamMenuBtn.addEventListener('click', () => {
+        if (smallMenu.classList.contains('header__sm-menu--active')) {
+          smallMenu.classList.remove('header__sm-menu--active')
+        } else {
+          smallMenu.classList.add('header__sm-menu--active')
+        }
+        if (headerHamMenuBtn.classList.contains('d-none')) {
+          headerHamMenuBtn.classList.remove('d-none')
+          headerHamMenuCloseBtn.classList.add('d-none')
+        } else {
+          headerHamMenuBtn.classList.add('d-none')
+          headerHamMenuCloseBtn.classList.remove('d-none')
+        }
+      });
+
+      for (let i = 0; i < headerSmallMenuLinks.length; i++) {
+        headerSmallMenuLinks[i].addEventListener('click', () => {
+          smallMenu.classList.remove('header__sm-menu--active')
+          headerHamMenuBtn.classList.remove('d-none')
+          headerHamMenuCloseBtn.classList.add('d-none')
+        })
+      }
+
+      const headerLogoConatiner = document.querySelector('.header__logo-container')
+
+      headerLogoConatiner.addEventListener('click', () => {
+        location.href = '/'
+      });
+    </script>
+    <script src="//code.tidio.co/hkirvl5pqs5cjjawh11xutnzjgtg9tfi.js" async></script>
   </body>
 </html>
+
